@@ -1,5 +1,6 @@
 import Home from "@/container/Home/index.jsx";
 import Bill from "@/container/Bill/index.jsx";
+import Login from "@/container/Login/index.jsx";
 
 const routes = [{
   path: '/',
@@ -7,6 +8,9 @@ const routes = [{
 }, {
   path: '/bill',
   component: Bill
+}, {
+  path: '/login',
+  component: Login
 }]
 
 export default routes

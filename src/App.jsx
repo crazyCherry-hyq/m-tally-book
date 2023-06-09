@@ -1,17 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import routes from "@/router/index.js";
 import NavBar from "@/components/layout/NavBar";
+import './App.css'
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <div className="container">
+      <div className="page">
         <Routes>
-          {routes.map(route => <Route exact key={route.path} path={route.path} element={<route.component />} />)}
+          {routes.map(route => <Route key={route.path} path={route.path} element={<route.component />} />)}
         </Routes>
-      </BrowserRouter>
+      </div>
       <NavBar />
-    </>
+    </div>
   )
 }
 

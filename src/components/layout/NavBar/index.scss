@@ -1,16 +1,4 @@
-.navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  border-top: 1px solid #eae9e9;
-  height: 150px;
-  line-height: 150px;
-  width: 100%;
-  .active {
-    color: #535bf2;
-  }
+.navbarBottom {
+  flex: 0;
+  border-top: solid 1px var(--adm-color-border);
 }

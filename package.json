@@ -9,10 +9,14 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "proxy": "http:127.0.0.1:7001",
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "antd-mobile": "^5.30.0",
+    "axios": "^1.4.0",
     "postcss": "^8.4.24",
     "postcss-pxtorem": "^6.0.0",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1",
@@ -22,6 +26,7 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "antd-mobile-icons": "^0.3.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
