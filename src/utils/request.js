@@ -1,5 +1,6 @@
 import axios from 'axios'
 import qs from "qs";
+import Cookies from "js-cookie";
 
 const MODE = import.meta.env.MODE
 
@@ -14,6 +15,14 @@ const service = axios.create({
   paramsSerializer(params) {
     return qs.stringify(params, {indices: false})
   }
+})
+
+service.interceptors.request.use((config) => {
+  const token = Cookies.get('tally-book-token');
+  if (token) {
+    config.headers.Authorization = token
+  }
+  return config
 })
 
 service.interceptors.response.use(res => {

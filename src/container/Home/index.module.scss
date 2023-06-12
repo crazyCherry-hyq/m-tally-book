@@ -1,0 +1,35 @@
+.pageTitle {
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+}
+$indexColorList: (1, #da928e), (2, #f7dddc), (3, #fdf9e6), (4, #e2ebfc), (5, #d8f5f0), (6, #f0e7f8), (7, #fae5ec), (8, #fa795a), (9, #88efe4), (10, #ac6dee),
+        (11, #efe586), (12, #b79450), (13, #399d58), (14, #3d60af), (15, #c941b6), (16, #bd96b6), (17, #fae5ec), (18, #a42d5c), (19, #8ac59b), (20, #dc844f);
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2vw;
+
+  .block{
+    width: 28vw;
+    height: 110px;
+    background-color: #576fa1;
+    border-radius: 18px;
+    margin: 2vw;
+    padding: 15px 0;
+    .title {
+      font-size: 14px;
+    }
+    @each $index, $color in $indexColorList {
+      $calcIndex: index($indexColorList, ($index, $color));
+      &.typeId#{$calcIndex} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.publicBox {
+
+}

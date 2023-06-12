@@ -11,7 +11,7 @@ export default function NavBar() {
   }
   const tabs = [
     {
-      key: '/home',
+      key: '/',
       title: '主页',
       icon: <AppOutline />,
       badge: '0'
@@ -21,7 +21,7 @@ export default function NavBar() {
       icon: <UnorderedListOutline />,
       badge: '0'
     }, {
-      key: '/my',
+      key: '/user',
       title: '我的',
       icon: <UserOutline />,
       badge: '0'

@@ -1,4 +1,8 @@
 .navbarBottom {
-  flex: 0;
   border-top: solid 1px var(--adm-color-border);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 100;
+  background-color: #fff;
 }

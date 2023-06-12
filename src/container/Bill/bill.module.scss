@@ -1,0 +1,47 @@
+
+.billContainer {
+  padding:2vh 2vw;
+  .calendar {
+    box-shadow: 0 1px 8px 2px #ebe9e9;
+    border-radius: 10px;
+  }
+
+  .list {
+    box-shadow: 0 1px 8px 2px #ebe9e9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      line-height: 38px;
+      padding: 0 8px;
+    }
+    .detail {
+      display: flex;
+      padding: 12px 8px;
+      font-size: 12px;
+      justify-content: space-between;
+      .left {
+        display: flex;
+      }
+      .icon {
+        width: 38px;
+        height: 38px;
+        margin-right: 10px;
+      }
+      .typeLabel {
+        font-size: 14px;
+      }
+      .greyText {
+        color: #696464;
+      }
+      .time {
+        font-size: 10px;
+        color: #ccc;
+      }
+
+    }
+  }
+}

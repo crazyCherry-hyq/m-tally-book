@@ -1,13 +1,18 @@
 import { Button, Form, Input } from "antd-mobile";
 import { login } from "@/api/user.js";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [form] = Form.useForm()
   const handleSubmitForm = () => {
     const values = form.getFieldsValue()
+    const navigator = useNavigate()
     console.log(values)
-    login(values).then(() => {
-
+    login(values).then(({ data }) => {
+      const token = data.token
+      Cookies.set('tally-book-token', token, { expires: 1 });
+      navigator('/')
     })
   }
   return <>
