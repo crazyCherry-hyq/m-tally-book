@@ -4,7 +4,7 @@ import qs from "qs";
 const MODE = import.meta.env.MODE
 
 const service = axios.create({
-  baseURL: '/api',
+  baseURL: MODE === 'development' ? '/api' : null,
   withCredentials: true,
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
