@@ -1,0 +1,13 @@
+
+.info {
+  box-shadow: 0 1px 7px 2px #e1e0e0;
+  padding: 15px 20px;
+  text-align: center;
+  .username {
+    margin: 10px 0 20px;
+  }
+  .records {
+    display: flex;
+    justify-content: space-between;
+  }
+}
