@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     'postcss-pxtorem': {
       propList: ['*'],
-      rootValue: 37.5,
+      rootValue: 15,
       selectorBlackList: ['.norem']
     }
   }

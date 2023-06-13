@@ -1,5 +1,5 @@
-import { CheckShieldOutline } from "antd-mobile-icons";
-import homeStyle from './index.module.scss'
+import { ReceiptOutline, ReceivePaymentOutline } from "antd-mobile-icons";
+import homeStyle from './home.module.scss'
 import { getTypeList } from "@/api/type.js";
 import { useEffect, useState } from "react";
 
@@ -25,7 +25,9 @@ export default function Home() {
         {expenseBillTypeList.map(item => (
           <div key={ item.id } className={ `${homeStyle.block} ${homeStyle[`typeId${item.id}`]}` }>
             <div className="title">{ item.name }</div>
-            <CheckShieldOutline />
+            <div className={ homeStyle.icon }>
+              <ReceivePaymentOutline />
+            </div>
             <div>￥155</div>
           </div>
         ))}
@@ -35,7 +37,9 @@ export default function Home() {
         {incomeBillTypeList.map(item => (
           <div key={ item.id } className={ `${homeStyle.block} ${homeStyle[`typeId${item.id}`]}` }>
             <div className="title">{ item.name }</div>
-            <CheckShieldOutline />
+            <div className={ homeStyle.icon }>
+              <ReceiptOutline />
+            </div>
             <div>￥155</div>
           </div>
         ))}
