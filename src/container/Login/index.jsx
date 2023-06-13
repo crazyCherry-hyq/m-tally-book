@@ -1,30 +1,36 @@
-import { Button, Form, Input } from "antd-mobile";
+import { Button, Form, Image, Input } from "antd-mobile";
 import { login } from "@/api/user.js";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import userStyle from "@/container/User/user.module.scss";
+import logo from "@/assets/image/logo.png";
 
 export default function Login() {
   const [form] = Form.useForm()
-  const handleSubmitForm = () => {
+  const navigator = useNavigate()
+  const HandleSubmitForm = () => {
     const values = form.getFieldsValue()
-    const navigator = useNavigate()
-    console.log(values)
     login(values).then(({ data }) => {
+      console.log(data)
       const token = data.token
       Cookies.set('tally-book-token', token, { expires: 1 });
       navigator('/')
     })
   }
   return <>
+    <div className={ userStyle.logo }>
+      <Image src={ logo } width={300} height={100} fit='contain' />
+    </div>
     <Form
       form={form}
+      mode='card'
       initialValues={{
         username: '',
         password: ''
       }}
       layout="horizontal"
       footer={
-        <Button block type="submit" color="primary" size="large" onClick={ handleSubmitForm }>登录</Button>
+        <Button block type="submit" color="primary" size="large" onClick={ HandleSubmitForm }>log in</Button>
       }
     >
       <Form.Item name="username" label="姓名" rules={[{ require: true, message: '用户名不能为空' }]}>

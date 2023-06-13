@@ -14,6 +14,19 @@ export function login(data) {
 }
 
 /**
+ * 登录接口
+ * @param data
+ * @returns {*}
+ */
+export function register(data) {
+  return request({
+    url: '/user/register',
+    method: 'post',
+    data
+  })
+}
+
+/**
  * 获取用户信息
  * @returns {*}
  */
