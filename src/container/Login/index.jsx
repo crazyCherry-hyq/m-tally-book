@@ -1,9 +1,10 @@
-import { Button, Form, Image, Input } from "antd-mobile";
+import { Button, Footer, Form, Image, Input } from "antd-mobile";
 import { login } from "@/api/user.js";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import userStyle from "@/container/User/user.module.scss";
 import logo from "@/assets/image/logo.png";
+import { setToken } from "@/utils/auth.js";
 
 export default function Login() {
   const [form] = Form.useForm()
@@ -11,9 +12,7 @@ export default function Login() {
   const HandleSubmitForm = () => {
     const values = form.getFieldsValue()
     login(values).then(({ data }) => {
-      console.log(data)
-      const token = data.token
-      Cookies.set('tally-book-token', token, { expires: 1 });
+      setToken(data.token)
       navigator('/')
     })
   }
@@ -40,5 +39,6 @@ export default function Login() {
         <Input type="password" placeholder="请输入密码"/>
       </Form.Item>
     </Form>
+    <Footer content='v1.0.0'></Footer>
   </>
 }

@@ -35,3 +35,9 @@ export function getUserInfo() {
     url: '/user/editUserInfo'
   })
 }
+
+export function getCaptcha() {
+  return request({
+    url: '/user/verify'
+  })
+}

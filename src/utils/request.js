@@ -3,6 +3,7 @@ import qs from "qs";
 import Cookies from "js-cookie";
 import httpCode from "@/enums/httpCode.js";
 import { Toast } from "antd-mobile";
+import { removeToken } from "@/utils/auth.js";
 
 const MODE = import.meta.env.MODE
 
@@ -62,7 +63,8 @@ service.interceptors.response.use(res => {
 }, error => {
   if (error.response && error.response.status) {
     switch (error.response.status) {
-      case httpCode.BAD_REQUEST:
+      case httpCode.UNAUTHORIZED:
+        removeToken()
         location.reload()
         break
     }

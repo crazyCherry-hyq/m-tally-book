@@ -2,10 +2,16 @@ import './index.scss'
 import { AppOutline, UnorderedListOutline, UserOutline } from 'antd-mobile-icons'
 import { TabBar } from "antd-mobile";
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import routes from "@/router/index.js";
 
 export default function NavBar() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const [showNavBar, setShowNavBar] = useState(false)
+  useEffect(() => {
+    setShowNavBar(routes.find(item => item.path === pathname).shouldShowNavBar)
+  }, [pathname])
   const changeTab = value => {
     navigate(value)
   }
@@ -27,6 +33,9 @@ export default function NavBar() {
       badge: '0'
     }
   ]
+  if (!showNavBar) {
+    return
+  }
   return (
     <>
       <TabBar className="navbarBottom norem" activeKey={ pathname } onChange={ value => changeTab(value) }>

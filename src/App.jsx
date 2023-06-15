@@ -8,7 +8,7 @@ function App() {
     <div className="container">
       <div className="page">
         <Routes>
-          {routes.map(route => <Route key={route.path} path={route.path} element={<route.component />} />)}
+          {routes.map(route => <Route key={`home${route.path}`} path={route.path} element={<route.component />} />)}
         </Routes>
       </div>
       <NavBar />
