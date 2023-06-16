@@ -65,8 +65,10 @@ service.interceptors.response.use(res => {
     switch (error.response.status) {
       case httpCode.UNAUTHORIZED:
         removeToken()
-        location.reload()
+        window.location.href = '/login'
         break
+      default:
+        Toast.show(error)
     }
   }
   console.log(error)
