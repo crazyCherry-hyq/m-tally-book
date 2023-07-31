@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    "module": "readonly"
+  },
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',

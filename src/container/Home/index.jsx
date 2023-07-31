@@ -24,6 +24,14 @@ export default function Home() {
     })
   }
 
+  const changeDate = (isNext) => {
+    if (isNext) {
+      setCurrentDate(dayjs(currentDate).add(1, 'month').format('YYYY-MM'))
+    } else {
+      setCurrentDate(dayjs(currentDate).subtract(1, 'month').format('YYYY-MM'))
+    }
+  }
+
   useEffect(() => {
     getAllTypeList()
     getALLBillList()
@@ -31,13 +39,9 @@ export default function Home() {
   return (
     <div className={ homeStyle.pageContainer }>
       <div className={ homeStyle.topNavBar }>
-        <span onClick={() => {
-          setCurrentDate(dayjs(currentDate).subtract(1, 'month').format('YYYY-MM'))
-        }}>&lt;</span>
+        <span onClick={ () => changeDate(false) }>&lt;</span>
         { currentDate }
-        <span onClick={() => {
-          setCurrentDate(dayjs(currentDate).add(1, 'month').format('YYYY-MM'))
-        }}>&gt;</span>
+        <span onClick={ () => changeDate(true) }>&gt;</span>
       </div>
       <div className={ homeStyle.pageTitle }>支出 <b>{ formatCurrency(incomeTotalAmount) }</b></div>
       <div className={ homeStyle.list }>

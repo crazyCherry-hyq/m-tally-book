@@ -1,8 +1,13 @@
 import userStyle from './user.module.scss'
 import { Avatar, List } from "antd-mobile";
 import { HistogramOutline, SetOutline, UserSetOutline } from "antd-mobile-icons";
+import { useNavigate } from "react-router-dom";
 
 export default function User() {
+  const navigate = useNavigate()
+  const handleTo = (value) => {
+    navigate(value)
+  }
   return <div className={ userStyle.container }>
     <div className={ userStyle.info }>
       <Avatar className={ userStyle.avatar } src='http://s.yezgea02.com/1615973940679/WeChat77d6d2ac093e247c361f0b8a7aeb6c2a.png' />
@@ -23,9 +28,8 @@ export default function User() {
       </div>
     </div>
     <div>
-
       <List className={ userStyle.setList } header=''>
-        <List.Item prefix={<UserSetOutline />} onClick={() => {}}>
+        <List.Item prefix={<UserSetOutline />} onClick={ () => handleTo('/editUser') }>
           用户信息修改
         </List.Item>
         <List.Item prefix={<SetOutline />} onClick={() => {}}>

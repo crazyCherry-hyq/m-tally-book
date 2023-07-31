@@ -1,6 +1,5 @@
 import { Button, Footer, Form, Image, Input } from "antd-mobile";
 import { login } from "@/api/user.js";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import userStyle from "@/container/User/user.module.scss";
 import logo from "@/assets/image/logo.png";

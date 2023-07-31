@@ -3,6 +3,7 @@ import Bill from "@/container/Bill/index.jsx";
 import Login from "@/container/Login/index.jsx";
 import User from "@/container/User/index.jsx";
 import Register from "@/container/Register/index.jsx";
+import EditUserInfo from "@/container/User/EditUserInfo/index.jsx";
 
 const routes = [{
   path: '/',
@@ -24,6 +25,10 @@ const routes = [{
   path: '/user',
   shouldShowNavBar: true,
   component: User
+}, {
+  path: '/editUser',
+  shouldShowNavBar: true,
+  component: EditUserInfo
 }]
 
 export default routes
