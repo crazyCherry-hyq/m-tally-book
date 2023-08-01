@@ -43,7 +43,7 @@ export function getCaptcha() {
  */
 export function getUserInfo() {
   return request({
-    url: '/user/editUserInfo'
+    url: '/user/getUserInfo'
   })
 }
 

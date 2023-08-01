@@ -47,11 +47,11 @@ export default function Home() {
       <div className={ homeStyle.list }>
         {expenseBillTypeList.map(item => (
           <div key={ item.id } className={ `${homeStyle.block} ${homeStyle[`typeId${item.id}`]}` }>
-            <div className="title">{ item.name }</div>
+            <div className="title, text-center">{ item.name }</div>
             <div className={ homeStyle.icon }>
               <ReceivePaymentOutline />
             </div>
-            <div>￥155</div>
+            <div className="text-center">￥155</div>
           </div>
         ))}
       </div>
@@ -59,11 +59,11 @@ export default function Home() {
       <div className={ homeStyle.list }>
         {incomeBillTypeList.map(item => (
           <div key={ item.id } className={ `${homeStyle.block} ${homeStyle[`typeId${item.id}`]}` }>
-            <div className="title">{ item.name }</div>
+            <div className="title text-center">{ item.name }</div>
             <div className={ homeStyle.icon }>
               <ReceiptOutline />
             </div>
-            <div>￥155</div>
+            <div className="text-center">￥155</div>
           </div>
         ))}
       </div>

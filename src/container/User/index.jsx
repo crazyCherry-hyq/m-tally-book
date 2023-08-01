@@ -2,16 +2,30 @@ import userStyle from './user.module.scss'
 import { Avatar, List } from "antd-mobile";
 import { HistogramOutline, SetOutline, UserSetOutline } from "antd-mobile-icons";
 import { useNavigate } from "react-router-dom";
+import { getUserInfo } from "@/api/user.js";
+import { useEffect, useState } from "react";
 
 export default function User() {
   const navigate = useNavigate()
+  const [userInfo, setUserInfo] = useState()
+
+  const fetchData = () => {
+    getUserInfo().then(({ data }) => {
+      setUserInfo(data)
+    })
+  }
+
   const handleTo = (value) => {
     navigate(value)
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
   return <div className={ userStyle.container }>
     <div className={ userStyle.info }>
-      <Avatar className={ userStyle.avatar } src='http://s.yezgea02.com/1615973940679/WeChat77d6d2ac093e247c361f0b8a7aeb6c2a.png' />
-      <div className={ userStyle.username }>小黑</div>
+      <Avatar className={ userStyle.avatar } src={ `http://127.0.0.1:7001${userInfo?.avatar}`} />
+      <div className={ userStyle.username }>{ userInfo?.username }</div>
       <div className={ userStyle.records }>
         <div className={ userStyle.item }>
           <div>29</div>
@@ -39,7 +53,7 @@ export default function User() {
           关于我们
         </List.Item>
       </List>
-      <div>退出登录</div>
+      <div className="text-center  mt-3">退出登录</div>
     </div>
   </div>
 }
